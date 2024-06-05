@@ -29,7 +29,7 @@ namespace ConsoleObfuscateID.AEPD
         /// <returns>The obfuscated document ID if it has the correct lenght otherwise returns the raw document.</returns>
         public string ObfuscateDocumentID(string rawDocument)
         {
-            StringBuilder sb = new(rawDocument);
+            StringBuilder sb = new(ClearDocument(rawDocument));
 
             if (sb.Length == _length)
             {
@@ -41,6 +41,12 @@ namespace ConsoleObfuscateID.AEPD
             }
             return sb.ToString();
         }
+
+        /// <summary>
+        /// Cleans the raw document string by trimming whitespace, converting to uppercase, and removing dashes and spaces.
+        /// </summary>
+        /// <param name="rawDocument">The raw document ID to clean.</param>
+        private static string ClearDocument(string rawDocument) => rawDocument.Trim().ToUpper().Replace("-", string.Empty).Replace(" ", string.Empty);
 
         /// <summary>
         /// Sets the document type and updates the start, end, and length based on the specified document type.
