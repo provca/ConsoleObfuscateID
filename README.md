@@ -1,5 +1,5 @@
 # ConsoleObfuscateID
-Net 8.0 library that enables the anonymization of identification numbers according to the recommendations of the Spanish Data Protection Agency (AEPD).
+Net 8.0 library that enables the anonymization of identification numbers according to the recommendations of the Spanish Data Protection Agency (AEPD)[^1].
 
 ## Detailed Description
 The AEPD has provided criteria to follow for anonymizing the DNI (National Identity Document) or equivalent document in public administrations. These criteria can also be used by data controllers or processors in private entities.
@@ -7,6 +7,7 @@ The AEPD has provided criteria to follow for anonymizing the DNI (National Ident
 When it is necessary to include the DNI or an equivalent identification document in publications, it should be anonymized as follows:
 
 The digits occupying the fourth, fifth, sixth, and seventh positions of the document format (numbered from left to right) will be published, and alphabetical characters will be omitted.
+
 Alphabetical characters and numerical digits not selected for publication will be replaced with an asterisk (*) in each position.
 
 Examples:
@@ -60,6 +61,7 @@ string result = obfuscated.ObfuscateDocumentID(document);
 > [!TIP]
 > `Utilities_CheckDocumentsID.cs` class adds `ClearDocument(string)` to clean the raw document string by trimming whitespace, converting to uppercase, and removing dashes and spaces.
 
+[^1]: [Anonymisation and pseudonymisation](https://www.aepd.es/en/prensa-y-comunicacion/blog/anonymisation-and-pseudonymisation)
 
 
 
